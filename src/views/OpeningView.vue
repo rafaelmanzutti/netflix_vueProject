@@ -6,7 +6,7 @@
         <div class="container-wrap">
           <div class="container-header">
             <div class="container-item-logo">
-              <span>Netflix</span>
+              <span><img src="../../public/netflix_official_logo_icon_168085.png" alt="logo-netflix"></span>
             </div>
             <div class="container-item-login">
               <div class="language-select">

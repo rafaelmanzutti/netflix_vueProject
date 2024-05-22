@@ -17,7 +17,7 @@ export default {
 
   data() {
     return {
-      conected: true
+      conected: false
     }
   },
   methods: {
