@@ -131,6 +131,53 @@
       </div>  
     </div>
 
+    <footer>
+      <div class="contact">
+        <p>Dúvidas? https://github.com/rafaelmanzutti/</p>
+      </div>
+      <div class="links-container-ship">
+        <div class="links-container">
+          <div class="links-box">
+            <p>Perguntas frequentes</p>
+            <p>Formas de assistir</p>
+            <p>Informações corporativas</p>
+            <p>Só na Netflix</p>
+          </div>
+          <div class="links-box">
+            <p>Central de Ajuda</p>
+            <p>Carreiras</p>
+            <p>Termos de uso</p>
+            <p>Entre em contato</p>
+          </div>
+        </div>
+        <div class="links-container">
+          <div class="links-box">
+            <p>Conta</p>
+            <p>Resgatar cartão pré-pago</p>
+            <p>Privacidade</p>
+            <p>Teste de velocidade</p>
+          </div>
+          <div class="links-box">
+            <p>Media Center</p>
+            <p>Comprar cartão pré-pago</p>
+            <p>Preferências de cookies</p>
+            <p>Avisos legais</p>
+          </div>
+        </div>
+      </div>
+      <div class="network">
+        <div class="social-media">
+          <div class="github"><img src="" alt="github"></div>
+          <div class="github-io"><img src="" alt="protifólio online"></div>
+          <div class="linkedin"><img src="" alt="linkedin"></div>
+          <div class="email"><img src="" alt="email"></div>
+        </div>
+        <div class="signature">
+          <p>Clone Netflix - Rafael Manzutti</p>
+        </div>
+      </div>
+    </footer>
+
 
   </div>
 </template>
@@ -171,11 +218,9 @@ p {
 }
 
 header {
- background-color: transparent;
  padding: 25px 0px 25px 0px;
 }
 .box-header {
-  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -220,7 +265,6 @@ header {
 .top-text {
   box-sizing: border-box;
   padding: 160px 20px 160px 20px;
-  background-color: transparent;
 }
 .top-text2 p {
   font-size: 1.3rem;
@@ -269,7 +313,6 @@ header {
   box-sizing: border-box;
   border-bottom: solid 8px rgb(56, 56, 56);
 }
-
 .question {
   background-color: rgb(49, 49, 49);
   display: flex;
@@ -279,14 +322,62 @@ header {
   padding: 0px 20px 0px 20px;
   box-sizing: border-box;
 }
-
 .question-text2 {
   padding: 20px 0px 0px 0px;
   box-sizing: border-box;
 }
-
 .question-text2 p {
   font-size: 1.3rem;
+}
+
+footer {
+  background-color: rgb(33, 134, 117);
+  box-sizing: border-box;
+  padding: 60px 460px 80px 460px;
+}
+.contact p {
+  background-color: blueviolet;
+  box-sizing: border-box;
+  padding: 10px 0px 20px 0px;
+  margin: 0px;
+  font-size: 1.1rem;
+  text-align: left;
+}
+.links-container-ship {
+  background-color: rgb(134, 33, 33);
+  display: flex;
+}
+.links-container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+.links-box {
+  width: 100%;
+}
+.links-box p {
+  background-color: blue;
+  font-size: 0.9rem;
+  text-align: left;
+  margin: 5px 5px 20px 0px;
+}
+.network {
+  width: 100%;
+  background-color: aqua;
+  box-sizing: border-box;
+  padding: 20px 0px 20px 0px;
+}
+.social-media {
+  background-color: chocolate;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 10px 0px 20px 0px;
+}
+.signature p {
+background-color: blueviolet;
+text-align: left;
+font-size: 0.9rem;
 }
 
 </style>
