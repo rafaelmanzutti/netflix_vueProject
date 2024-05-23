@@ -4,20 +4,18 @@
     <div class="top-page">
       <div class="shadow">
         <header>
-          <div class="box-header">
-            <div class="header-item-logo">
+          <div class="header-item-logo">
               <span><img src="../../public/netflix_official_logo_icon_168085.png" alt="logo-netflix"></span>
+          </div>
+          <div class="header-item-login">
+            <div class="language-select">
+              <select name="language-select" id="">
+                <option value="pt-br">Português</option>
+                <option value="en">English</option>
+              </select>
             </div>
-            <div class="header-item-login">
-              <div class="language-select">
-                <select name="language-select" id="">
-                  <option value="pt-br">Português</option>
-                  <option value="en">English</option>
-                </select>
-              </div>
-              <div class="enter">
-                <button  @click="$router.push('login')">Entrar</button>
-              </div>
+            <div class="enter">
+              <button  @click="$router.push('login')">Entrar</button>
             </div>
           </div>
         </header>
@@ -215,15 +213,17 @@ p {
 }
 .shadow {
   background-color: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  padding: 0px 460px 100px 460px;
 }
 
 header {
- padding: 25px 0px 25px 0px;
-}
-.box-header {
+  background-color: aqua;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 25px 0px 25px 0px;
 }
 .header-item-logo {
   font-size: 1.7rem;
@@ -235,6 +235,7 @@ header {
   align-items: center;
 }
 .language-select select {
+  box-sizing: border-box;
   padding: 10px;
   font-weight: 600;
   font-size: 1rem;
@@ -247,12 +248,14 @@ header {
   color: black;
 }
 .header-item-login .enter {
+  box-sizing: border-box;
   padding-left: 25px;
 }
 .enter button {
   background-color: red;
   border: none;
   border-radius: 5px;
+  box-sizing: border-box;
   padding: 11px 18px;
   color: white;
   font-weight: 600;
@@ -263,15 +266,20 @@ header {
 }
 
 .top-text {
+  background-color: blue;
   box-sizing: border-box;
-  padding: 160px 20px 160px 20px;
+  padding: 160px 0px 100px 0px;
+}
+.top-text h1 {
+  background-color: aqua;
+}
+.top-text p {
+  background-color: rgb(0, 255, 42);
 }
 .top-text2 p {
   font-size: 1.3rem;
 }
-.enter-lg {
-  padding-top: 0px;
-}
+
 .enter-lg button {
   background-color: red;
   border: none;
@@ -284,33 +292,35 @@ header {
 .enter-lg button:hover {
   background-color: rgb(196, 0, 0);
 }
-
-.body-content-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.body-content {
+  background-color: blue;
   box-sizing: border-box;
-  padding: 100px 0px 120px 0px;
+  padding: 120px 450px 120px 460px;
+}
+.body-content-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: lightsalmon;
   border-bottom: solid 8px rgb(56, 56, 56);
 }
 .content-text {
-  box-sizing: border-box;
   text-align: left;
   background-color: lightpink;
-  width: 33%;
-  padding: 0px 0px 0px 50px;
+  width: 50%;
 }
 .content-image {
   box-sizing: border-box;
   background-color: lightseagreen;
-  width: 33%;
+  width: 50%;
   padding: 0px 0px 0px 20px;
 }
 
 .questions {
-  padding: 50px 460px 80px 470px;
+  background-color: coral;
   box-sizing: border-box;
+  padding: 50px 460px 80px 470px;
   border-bottom: solid 8px rgb(56, 56, 56);
 }
 .question {
@@ -323,6 +333,7 @@ header {
   box-sizing: border-box;
 }
 .question-text2 {
+  background-color: aquamarine;
   padding: 20px 0px 0px 0px;
   box-sizing: border-box;
 }
@@ -379,5 +390,6 @@ background-color: blueviolet;
 text-align: left;
 font-size: 0.9rem;
 }
+
 
 </style>
