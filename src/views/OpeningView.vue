@@ -264,7 +264,6 @@ header {
 .enter button:hover {
   background-color: rgb(196, 0, 0);
 }
-
 .top-text {
   background-color: blue;
   box-sizing: border-box;
@@ -279,7 +278,6 @@ header {
 .top-text2 p {
   font-size: 1.3rem;
 }
-
 .enter-lg button {
   background-color: red;
   border: none;
@@ -292,6 +290,7 @@ header {
 .enter-lg button:hover {
   background-color: rgb(196, 0, 0);
 }
+
 .body-content {
   background-color: blue;
   box-sizing: border-box;
