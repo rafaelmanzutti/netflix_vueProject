@@ -35,6 +35,7 @@
     </div>
     
     <div class="body-content">
+
       <div class="body-content-box">
         <div class="content-text">
           <h1>Aproveite na TV</h1>
@@ -71,6 +72,7 @@
           imagem
         </div>
       </div>
+      
     </div>
     
     <div class="questions">
@@ -218,7 +220,6 @@ p {
 }
 
 header {
-  background-color: aqua;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -265,15 +266,8 @@ header {
   background-color: rgb(196, 0, 0);
 }
 .top-text {
-  background-color: blue;
   box-sizing: border-box;
   padding: 160px 0px 100px 0px;
-}
-.top-text h1 {
-  background-color: aqua;
-}
-.top-text p {
-  background-color: rgb(0, 255, 42);
 }
 .top-text2 p {
   font-size: 1.3rem;
@@ -292,7 +286,6 @@ header {
 }
 
 .body-content {
-  background-color: blue;
   box-sizing: border-box;
   padding: 120px 450px 120px 460px;
 }
@@ -301,23 +294,19 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightsalmon;
   border-bottom: solid 8px rgb(56, 56, 56);
 }
 .content-text {
   text-align: left;
-  background-color: lightpink;
   width: 50%;
 }
 .content-image {
   box-sizing: border-box;
-  background-color: lightseagreen;
   width: 50%;
   padding: 0px 0px 0px 20px;
 }
 
 .questions {
-  background-color: coral;
   box-sizing: border-box;
   padding: 50px 460px 80px 470px;
   border-bottom: solid 8px rgb(56, 56, 56);
@@ -332,7 +321,6 @@ header {
   box-sizing: border-box;
 }
 .question-text2 {
-  background-color: aquamarine;
   padding: 20px 0px 0px 0px;
   box-sizing: border-box;
 }
@@ -341,12 +329,10 @@ header {
 }
 
 footer {
-  background-color: rgb(33, 134, 117);
   box-sizing: border-box;
   padding: 60px 460px 80px 460px;
 }
 .contact p {
-  background-color: blueviolet;
   box-sizing: border-box;
   padding: 10px 0px 20px 0px;
   margin: 0px;
@@ -354,41 +340,92 @@ footer {
   text-align: left;
 }
 .links-container-ship {
-  background-color: rgb(134, 33, 33);
   display: flex;
 }
 .links-container {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
 }
 .links-box {
   width: 100%;
 }
 .links-box p {
-  background-color: blue;
   font-size: 0.9rem;
   text-align: left;
   margin: 5px 5px 20px 0px;
 }
 .network {
   width: 100%;
-  background-color: aqua;
   box-sizing: border-box;
   padding: 20px 0px 20px 0px;
 }
 .social-media {
-  background-color: chocolate;
   display: flex;
   justify-content: space-around;
   box-sizing: border-box;
   padding: 10px 0px 20px 0px;
 }
 .signature p {
-background-color: blueviolet;
 text-align: left;
 font-size: 0.9rem;
 }
 
+@media (max-width: 1920px){
+  .shadow, .body-content, .questions, footer {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+@media (max-width: 1280px){
+  .shadow, .body-content, .questions, footer {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+@media (max-width: 960px){
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  .top-text {
+    padding: 100px 0px 0px 0px;
+  }
+  .top-text2 p {
+    font-size: 1.1rem;
+  }
+  .body-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .body-content-box {
+    display: block;
+  }
+  .content-text {
+    width: 100%;
+    text-align: center;
+  }
+  .content-image {
+    width: 100%;
+  }
+  .question-text2 p {
+    font-size: 1.2rem;
+  }
+  footer {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .contact p {
+    font-size: 1rem;
+  }
+  .links-container {
+    display: block;
+  }
+  .links-box p, .signature p {
+    font-size: 0.8rem;
+  }
+  
+}
 
 </style>
