@@ -285,15 +285,13 @@ header {
   background-color: rgb(196, 0, 0);
 }
 
-.body-content {
-  box-sizing: border-box;
-  padding: 120px 450px 120px 460px;
-}
 .body-content-box {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  padding: 120px 450px 120px 460px;
   border-bottom: solid 8px rgb(56, 56, 56);
 }
 .content-text {
@@ -371,13 +369,13 @@ font-size: 0.9rem;
 }
 
 @media (max-width: 1920px){
-  .shadow, .body-content, .questions, footer {
+  .shadow, .body-content-box, .questions, footer {
     padding-left: 200px;
     padding-right: 200px;
   }
 }
 @media (max-width: 1280px){
-  .shadow, .body-content, .questions, footer {
+  .shadow, .body-content-box, .questions, footer {
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -395,12 +393,10 @@ font-size: 0.9rem;
   .top-text2 p {
     font-size: 1.1rem;
   }
-  .body-content {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
   .body-content-box {
     display: block;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   .content-text {
     width: 100%;
