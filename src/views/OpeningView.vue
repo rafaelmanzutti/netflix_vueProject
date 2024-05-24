@@ -299,7 +299,7 @@ header {
 .body-content-box {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: lightsalmon;
   border-bottom: solid 8px rgb(56, 56, 56);
