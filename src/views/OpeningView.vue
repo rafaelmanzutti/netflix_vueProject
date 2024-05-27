@@ -192,14 +192,9 @@ export default {
 }
 </script>
 
-<style>
-body, html {
-  background: #000;
-  max-width: 100%;
-  margin: 0;
-}
-
+<style scoped>
 .opening-view {
+  background: #000;
   color:White;
 }
 h1 {
@@ -420,6 +415,47 @@ font-size: 0.9rem;
   }
   .links-box p, .signature p {
     font-size: 0.8rem;
+  }
+
+  @media (max-width: 600px) {
+    .top-text {
+      padding: 20px 0px 10px 0px;
+    }
+    .header-item-login .enter {
+      padding-left: 7px;
+    }
+    .contact p {
+      font-size: 0.8rem;
+    }
+    .social-media {
+      display: block;
+    }
+    .github, .github-io, .linkedin, .email {
+     padding: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      display: block;
+      padding: 20px 0px 5px 0px;
+    }
+    .header-item-logo {
+      text-align: left;
+    }
+    .language-select select {
+      padding: 5px;
+      font-size: 0.9rem;
+    }
+    .enter button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+    .enter-lg button {
+      padding: 15px 30px;
+      font-size: 1.1rem;
+    }
+
   }
   
 }

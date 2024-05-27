@@ -36,6 +36,11 @@ export default {
 </script>
 
 <style lang="scss">
+body, html {
+  max-width: 100%;
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
