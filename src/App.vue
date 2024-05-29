@@ -38,6 +38,7 @@ export default {
 <style lang="scss">
 body, html {
   max-width: 100%;
+  max-height: 100%;
   margin: 0;
 }
 

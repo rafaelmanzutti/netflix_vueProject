@@ -1,10 +1,13 @@
 <template>
-  <div class="">
-    <ProfilesComp msg="Quem está assistindo?" v-if="!user"/>
-    <div v-else>
-      <h1>Perfil Selecionado</h1>
-    </div>
+  <div class="browse-view">
 
+    <div class="">
+      <ProfilesComp msg="Quem está assistindo?" v-if="!user"/>
+      <div v-else>
+        <h1>Perfil Selecionado</h1>
+      </div>
+    </div>
+    
   </div>
 </template>
 
@@ -25,3 +28,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.browse-view {
+  background-color: black;
+  height: 100%;
+}
+</style>

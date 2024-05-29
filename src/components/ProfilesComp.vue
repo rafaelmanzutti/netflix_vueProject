@@ -1,7 +1,16 @@
 <template>
-  <div class="">
-    <h1>{{ msg }}</h1>
-    <button @click="$router.push('manageProfiles')">Gerenciar perfis</button>
+  <div class="profiles-comp">
+
+    <div class="full-page">
+      <div class="centralizer">
+        <h1>{{ msg }}</h1>
+        <div>
+
+        </div>
+        <button @click="$router.push('manageProfiles')">Gerenciar perfis</button>
+    </div>
+    </div>
+    
   </div>
 </template>
 
@@ -14,20 +23,14 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+
+<style scoped>
+.profiles-comp {
+  padding: 40px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.full-page {
+  background-color: rgb(248, 211, 156);
+  height: calc(100vh - 80px);
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
