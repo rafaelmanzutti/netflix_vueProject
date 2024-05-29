@@ -25,7 +25,7 @@
                 <button  @click="$router.push('manageProfiles')">Entrar</button>
               </div>
               <div>
-                <p>Novo por aqui? <strong>Assine Agora.</strong></p>
+                <p>Novo por aqui? <a href="/register"><strong>Assine Agora.</strong></a></p>
               </div>
               <div class="small-text">
                 <p>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. Saiba mais.</p>
@@ -152,6 +152,10 @@ header {
 .top-text p {
   text-align: left;
 }
+.top-text a {
+  text-decoration: none;
+  color: white;
+}
 .login-email {
   padding: 10px 0px;
   border: solid 1px white;
@@ -174,9 +178,11 @@ header {
   color: white;
   font-weight: 600;
   font-size: 1rem;
+
 }
 .enter-lg button:hover {
   background-color: rgb(196, 0, 0);
+  cursor: pointer;
 }
 
 .small-text p {
