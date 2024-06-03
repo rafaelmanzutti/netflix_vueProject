@@ -99,10 +99,6 @@ export default {
 </script>
 
 <style scoped>
-.top-page {
-  box-sizing: border-box;
-  padding: 0px 0px 150px 0px;
-}
 header {
   display: flex;
   justify-content: space-between;
@@ -131,7 +127,7 @@ header {
 .shadow2 {
   display: flex;
   box-sizing: border-box;
-  max-width: 450px;
+  max-width: 550px;
   padding: 40px 60px 140px 60px;
 }
 .top-text {
@@ -183,7 +179,7 @@ h1 {
 }
 
 footer {
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(238, 238, 238);
   box-sizing: border-box;
   padding: 30px 460px 80px 460px;
 }
@@ -226,27 +222,18 @@ font-size: 0.9rem;
 }
 
 @media (max-width: 1920px){
-  .top-page {
-    padding: 0px 0px 120px 0px;
-  }
   footer {
     padding-left: 200px;
     padding-right: 200px;
   }
 }
 @media (max-width: 1280px){
-  .top-page {
-    padding: 0px 0px 100px 0px;
-  }
   footer {
     padding-left: 35px;
     padding-right: 35px;
   }
 }
 @media (max-width: 960px){
-  .top-page {
-    padding: 0px 0px 0px 0px;
-  }
   h1 {
     font-size: 2rem;
   }
