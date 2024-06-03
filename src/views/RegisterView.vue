@@ -21,9 +21,6 @@
               <p>Faltam só mais alguns passos!</p>
               <p>Nós também detestamos formulários.</p>
             </div>
-            <div class="login-name">
-              <span>nome</span>
-            </div>
             <div class="login-email">
               <span>email</span>
             </div>
@@ -144,17 +141,11 @@ h1 {
   font-size: 1.2rem;
 }
 
-.login-name {
-  padding: 15px 0px;
-  border: solid 1px rgb(0, 0, 0);
-  border-radius: 5px;
-  margin: 25px 0px 20px 0px;
-}
 .login-email {
   padding: 15px 0px;
   border: solid 1px rgb(0, 0, 0);
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin: 25px 0px 20px 0px;
 }
 .login-password {
   padding: 15px 0px;

@@ -2,7 +2,7 @@
   <div class="browse-view">
 
     <div class="">
-      <ProfilesComp msg="Quem está assistindo?" v-if="!user"/>
+      <ProfilesComp msg="Quem está assistindo?" v-if="!userProfile"/>
       <div v-else>
         <h1>Perfil Selecionado</h1>
       </div>
@@ -19,7 +19,7 @@ export default {
   name: 'BrowseView',
   data() {
     return {
-      user: '',
+      userProfile: '',
 
     }
   },

@@ -17,6 +17,11 @@
 <script>
 export default {
   name: 'ProfilesComp',
+  data() {
+    return {
+      userProfile: ''
+    }
+  },
   props: {
     msg: String
   }
