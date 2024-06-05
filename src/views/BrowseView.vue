@@ -32,6 +32,10 @@ export default {
 <style>
 .browse-view {
   background-color: black;
-  height: 100%;
+  height: 100vh;
+}
+
+h1, p {
+  color: white;
 }
 </style>
