@@ -17,12 +17,12 @@ export default {
 
   data() {
     return {
-      conected: false
+      log: true
     }
   },
   methods: {
     verifyLog() {
-      if(this.conected === true) {
+      if(this.log === true) {
         this.$router.push('browse')
       }
     }
