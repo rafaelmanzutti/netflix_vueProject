@@ -29,7 +29,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 .profiles-comp {
   height: 100vh;
   box-sizing: border-box;

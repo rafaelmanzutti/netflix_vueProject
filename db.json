@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "manzutti@gmail.com",
+            "password": 12345
+        }
+    ],
+    "profiles": [
+        {
+            "id": 1,
+            "name": "Rafael",
+            "img":"./public/imgAvatar/bigodeAvatar.png",
+            "childProfile": "false",
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "name": "Marilia",
+            "img":"./public/imgAvatar/smileAvatar.png",
+            "childProfile": "false",
+            "userId": 1
+        },
+        {
+            "id": 3,
+            "name": "Elis",
+            "img":"./public/imgAvatar/girlAvatar.png",
+            "childProfile": "true",
+            "userId": 1
+        },
+        {
+            "id": 4,
+            "name": "Helena",
+            "img":"./public/imgAvatar/pandaAvatar.png",
+            "childProfile": "false",
+            "userId": 1
+        }
+    ]
+}
