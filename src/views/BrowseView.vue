@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 import ProfilesComp from '@/components/ProfilesComp.vue'
 
 export default {
@@ -24,8 +23,7 @@ export default {
     }
   },
   components: {
-    ProfilesComp
-  }
+    ProfilesComp,  }
 }
 </script>
 

@@ -10,28 +10,28 @@
         {
             "id": 1,
             "name": "Rafael",
-            "img":"./public/imgAvatar/bigodeAvatar.png",
+            "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLA3U8lqPkkkMrPox2OzNyS5d3gpPx-uMlag&s",
             "childProfile": "false",
             "userId": 1
         },
         {
             "id": 2,
             "name": "Marilia",
-            "img":"./public/imgAvatar/smileAvatar.png",
+            "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ8oyXqxbNVc-aVRcZ7WTT3bKX4Hqfh3V55Q&s",
             "childProfile": "false",
             "userId": 1
         },
         {
             "id": 3,
             "name": "Elis",
-            "img":"./public/imgAvatar/girlAvatar.png",
+            "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiSRIlNla0MmNXBSJofMMenqC5UxAQQaiSMg&s",
             "childProfile": "true",
             "userId": 1
         },
         {
             "id": 4,
             "name": "Helena",
-            "img":"./public/imgAvatar/pandaAvatar.png",
+            "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVGEUXKPdMRJLA5w6Du8iJe081v1WxO6zsZQ&s",
             "childProfile": "false",
             "userId": 1
         }

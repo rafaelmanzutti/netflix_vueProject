@@ -174,6 +174,10 @@ footer {
   box-sizing: border-box;
   padding: 30px 460px 80px 460px;
 }
+footer p {
+  color: black;
+}
+
 .contact p {
   box-sizing: border-box;
   padding: 10px 0px 20px 0px;
