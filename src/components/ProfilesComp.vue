@@ -17,7 +17,7 @@ export default {
   name: 'ProfilesComp',
   data() {
     return {
-      userProfile: ''
+      
     }
   },
   components: { GetProfilesComp },

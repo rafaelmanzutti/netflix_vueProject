@@ -1,9 +1,10 @@
 <template>
   <div class="get-profile">
     <div class="get-profile-box" v-for="(profile, id) in profiles" :key="id">
-      <img style="width: 85%" :src="profile.img" alt="avatar">
-      <p>{{ profile.name }}</p>
-      
+      <div>
+        <img style="width: 85%" :src="profile.img" alt="avatar">
+        <p>{{ profile.name }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -16,8 +17,11 @@ export default {
   data() {
     return {
       profiles: [],
-      
+      profileSelect: {}
     }
+  },
+  computed:{
+    
   },
   
   methods: {
@@ -25,14 +29,15 @@ export default {
 			axios.get('http://localhost:3000/profiles')
         .then(res => {
           this.profiles = (res.data)
-          console.log(this.profiles)
 			})
-      
-		}
+		},
+    
+
   },
   mounted(){
     this.obterPerfis()
   }
+
 }
 </script>
 
