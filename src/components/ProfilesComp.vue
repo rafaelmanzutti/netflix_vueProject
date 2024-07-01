@@ -3,29 +3,32 @@
 
     <div class="profiles-full-page">
       <div class="profiles-centralizer">
-        <h1>{{ msg }}</h1>
-        <GetProfilesComp></GetProfilesComp>
-    </div>
+        <h1>Quem está Assistindo?</h1>
+        <div class="get-profile">
+          <div class="get-profile-box" v-for="profile in profiles" :key="profile.id"
+            @click="setProfileSelected(profile)">
+            <img style="width: 85%" :src="profile.img" alt="avatar">
+            <p>{{ profile.name }}</p>
+          </div>
+       </div>
+      </div>
     </div>
     
   </div>
 </template>
 
 <script>
-import GetProfilesComp from '@/components/GetProfilesComp.vue'
+import barramento from '@/barramento'
+
 export default {
   name: 'ProfilesComp',
-  data() {
-    return {
-      
-    }
-  },
-  components: { GetProfilesComp },
   props: {
-    msg: String
+    profiles: Array
   },
   methods: {
-
+    setProfileSelected(profile) {
+      barramento.setProfileSelected(profile)
+    }
   }
 }
 </script>
@@ -53,9 +56,18 @@ h1 {
   margin: 0;
 }
 p {
-  background-color: rgb(3, 168, 31);
   font-weight: 100;
   margin: 0;
+}
+
+.get-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.get-profile-box {
+  display:block;
+  margin-top: 30px;
 }
 
 @media screen and (min-width: 25em){
