@@ -15,15 +15,8 @@
   
   export default {
     name: 'ManageProfilesView',
-    data() {
-    return {
-      user: '',
-
-    }
-  },
-    components: {
-     
-    }
+    
+  
   }
   </script>
   

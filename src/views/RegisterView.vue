@@ -89,9 +89,7 @@
 
 export default {
   name: 'RegisterView',
-  components: {
-   
-  }
+  
 }
 </script>
 

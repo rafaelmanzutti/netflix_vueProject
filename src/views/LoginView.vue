@@ -22,7 +22,7 @@
                 <span>senha</span>
               </div>
               <div class="enter-lg">
-                <button  @click="$router.push('manageProfiles')">Entrar</button>
+                <button  @click="$router.push('browse')">Entrar</button>
               </div>
               <div>
                 <p>Novo por aqui? <a href="/register"><strong>Assine Agora.</strong></a></p>
@@ -94,9 +94,7 @@
 
 export default {
   name: 'LoginView',
-  components: {
-   
-  }
+  
 }
 </script>
 
@@ -174,7 +172,7 @@ header {
   border: none;
   border-radius: 5px;
   padding: 10px 0px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   color: white;
   font-weight: 600;
   font-size: 1rem;
