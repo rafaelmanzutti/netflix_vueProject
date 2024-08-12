@@ -4,7 +4,7 @@ import OpeningView from '../views/OpeningView.vue'
 import BrowseView from '../views/BrowseView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
-import ManageProfilesView from '../views/ManageProfilesView.vue'
+
 
 Vue.use(VueRouter)
 
@@ -29,11 +29,7 @@ const routes = [
     name: 'register',
     component: RegisterView
   },
-  {
-    path: '/manageProfiles',
-    name: 'manageProfiles',
-    component: ManageProfilesView
-  },
+  
 ]
 
 const router = new VueRouter({

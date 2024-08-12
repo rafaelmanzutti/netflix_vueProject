@@ -5,7 +5,6 @@
       <router-link to="/browse">Browse</router-link> |
       <router-link to="/login">Login</router-link> |
       <router-link to="/register">Register</router-link> |
-      <router-link to="/manageProfiles">Gerenciar Perfis</router-link>
     </nav>
     <router-view/>
   </div>

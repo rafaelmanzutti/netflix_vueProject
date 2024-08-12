@@ -186,9 +186,7 @@
 
 export default {
   name: 'OpeningView',
-  components: {
-   
-  }
+  
 }
 </script>
 
