@@ -29,6 +29,7 @@ export default {
     setProfileSelected(profile) {
       barramento.setProfileSelected(profile)
     }
+    
   }
 }
 </script>

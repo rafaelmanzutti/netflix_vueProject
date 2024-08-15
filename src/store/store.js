@@ -6,11 +6,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     profile: {},
-    
+    log: false
   },
   getters: {
   },
   mutations: {
+    logar(state) {
+      state.log = true
+    }
   },
   actions: {
   },

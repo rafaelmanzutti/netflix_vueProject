@@ -16,13 +16,13 @@
                 <h1>Entrar</h1>
               </div>
               <div class="login-email">
-                <span>email</span>
+                <input type="email" id="email" v-model="email" placeholder="e-mail">
               </div>
               <div class="login-senha">
-                <span>senha</span>
+                <input type="password" id="senha" v-model="senha" placeholder="senha">
               </div>
               <div class="enter-lg">
-                <button  @click="$router.push('browse')">Entrar</button>
+                <button  @click="entrarBrowse">Entrar</button>
               </div>
               <div>
                 <p>Novo por aqui? <a href="/register"><strong>Assine Agora.</strong></a></p>
@@ -34,8 +34,6 @@
           </div>
         </div>
         
-        
-
       </div>
     </div>
 
@@ -91,11 +89,30 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'LoginView',
-  
+  data() {
+    return {
+      senha: '',
+      email: '',
+      users: {}
+    }
+  },
+  methods: {
+
+    ...mapMutations(['logar']),
+
+    entrarBrowse() {
+      this.logar()
+      this.$router.push('browse')
+    }
+
+  },
+
 }
+
 </script>
 
 <style scoped>
