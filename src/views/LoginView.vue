@@ -101,18 +101,14 @@ export default {
     }
   },
   methods: {
-
-    ...mapMutations(['logar']),
+    ...mapMutations(['setLog']),
 
     entrarBrowse() {
-      this.logar()
+      this.setLog()
       this.$router.push('browse')
     }
-
-  },
-
+  }
 }
-
 </script>
 
 <style scoped>

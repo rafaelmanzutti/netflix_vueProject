@@ -6,17 +6,19 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     profile: {},
-    log: false
-  },
-  getters: {
+    log: false,
+    emptyProfile: true
+
   },
   mutations: {
-    logar(state) {
+    setLog(state) {
       state.log = true
+    },
+    setProfile(state, payload) {
+      state.profile = payload
+    },
+    setEmptyProfile(state) {
+      state.emptyProfile = false
     }
-  },
-  actions: {
-  },
-  modules: {
   }
 })

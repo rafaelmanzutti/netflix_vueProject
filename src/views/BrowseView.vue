@@ -2,7 +2,7 @@
   <div class="browse-view">
 
     <div class="">
-      <ProfilesComp :profiles="[...profiles]" v-if="!profile"/>
+      <ProfilesComp :profiles="[...profiles]" v-if="emptyProfile"/>
       <div v-else>
         <h1>Perfil Selecionado</h1>
         <p>{{ profile.name }}</p>
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import barramento from '@/barramento'
 import ProfilesComp from '@/components/ProfilesComp.vue'
 import axios from 'axios'
 
@@ -22,8 +21,15 @@ export default {
   name: 'BrowseView',
   data() {
     return {
-      profile: null,
-      profiles: []
+      profiles: [],
+    }
+  },
+  computed: {
+    profile() {
+      return this.$store.state.profile
+    },
+    emptyProfile() {
+      return this.$store.state.emptyProfile
     }
   },
   methods: {
@@ -34,12 +40,13 @@ export default {
 			})
 		},
   },
-
   created() {
     this.obterPerfis()
-    barramento.onProfileSelected(profile => {
-      this.profile = profile
-    })
+    //if(this.profile.length === 0) {
+   //   this.perfilVazio = true
+   // } else {
+   //   this.perfilVazio = false
+   // }
   },
 
   components: { ProfilesComp }

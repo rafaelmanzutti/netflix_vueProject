@@ -18,18 +18,19 @@
 </template>
 
 <script>
-import barramento from '@/barramento'
-
+import { mapMutations } from 'vuex'
 export default {
   name: 'ProfilesComp',
   props: {
     profiles: Array
   },
   methods: {
+    ...mapMutations(['setProfile', 'setEmptyProfile']),
+
     setProfileSelected(profile) {
-      barramento.setProfileSelected(profile)
+      this.setProfile(profile)
+      this.setEmptyProfile()
     }
-    
   }
 }
 </script>
