@@ -5,8 +5,8 @@
       <div class="profiles-centralizer">
         <h1>Quem está Assistindo?</h1>
         <div class="get-profile">
-          <div class="get-profile-box" v-for="profile in profiles" :key="profile.id"
-            @click="setProfileSelected(profile)">
+          <div class="get-profile-box" v-for="profile in profiles"
+            :key="profile.id" @click="setProfileSelected(profile)">
             <img style="width: 85%" :src="profile.img" alt="avatar">
             <p>{{ profile.name }}</p>
           </div>
@@ -34,7 +34,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 .profiles-comp {

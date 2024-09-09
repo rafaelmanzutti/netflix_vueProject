@@ -7,6 +7,9 @@
         <h1>Perfil Selecionado</h1>
         <p>{{ profile.name }}</p>
         <img :src="profile.img" alt="avatar">
+        <CarouselFilmsComp titleCarousel="Filmes Lançamentos" session="filmsNew" />
+        <CarouselFilmsComp titleCarousel="Filmes Populares" session="filmsPop" />
+        <CarouselFilmsComp titleCarousel="Filmes Melhores avaliados" session="filmsBestOverage" />
       </div>
     </div>
     
@@ -15,10 +18,12 @@
 
 <script>
 import ProfilesComp from '@/components/ProfilesComp.vue'
+import CarouselFilmsComp from '@/components/CarouselFilmsComp.vue'
 import axios from 'axios'
 
 export default {
   name: 'BrowseView',
+  components: {ProfilesComp, CarouselFilmsComp},
   data() {
     return {
       profiles: [],
@@ -47,16 +52,14 @@ export default {
    // } else {
    //   this.perfilVazio = false
    // }
-  },
-
-  components: { ProfilesComp }
+  }
 }
 </script>
 
 <style>
 .browse-view {
   background-color: black;
-  height: 100vh;
+ 
 }
 
 h1, p {
