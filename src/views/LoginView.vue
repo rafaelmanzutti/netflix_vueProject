@@ -104,7 +104,7 @@ export default {
     ...mapMutations(['setLog']),
 
     entrarBrowse() {
-      this.setLog()
+      this.setLog(true)
       this.$router.push('browse')
     }
   }
@@ -114,7 +114,7 @@ export default {
 <style scoped>
 
 .login-view {
-  background: #000;
+  background-color: rgb(22, 22, 22);
   color:White;
 }
 h1 {
@@ -129,7 +129,7 @@ p {
 }
 
 .shadow {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(22, 22, 22, 0.6);
   box-sizing: border-box;
   padding: 0px 460px 100px 460px;
 }
@@ -146,7 +146,7 @@ header {
  
 }
 .shadow2 {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(22, 22, 22, 0.6);
   display: flex;
   box-sizing: border-box;
   max-width: 450px;
@@ -281,7 +281,7 @@ font-size: 0.9rem;
 
 @media (max-width: 600px) {
   .top-page {
-    background: black;
+    background: rgb(22, 22, 22);
   }
   h1 {
     margin: 0px;

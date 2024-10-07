@@ -29,7 +29,7 @@ export default {
 
     setProfileSelected(profile) {
       this.setProfile(profile)
-      this.setEmptyProfile()
+      this.setEmptyProfile(false)
     }
   }
 }

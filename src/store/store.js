@@ -9,20 +9,26 @@ export default new Vuex.Store({
     profile: {},
     log: false,
     emptyProfile: true,
+    filmSelected: {},
     filmsNew: {},
     filmsPop: {},
-    filmsBestOverage: {}
+    filmsBestOverage: {},
+    directorSelected: [],
+    castSelected: [],
   },
 
   mutations: {
-    setLog(state) {
-      state.log = true
+    setLog(state, payload) {
+      state.log = payload
     },
     setProfile(state, payload) {
       state.profile = payload
     },
-    setEmptyProfile(state) {
-      state.emptyProfile = false
+    setEmptyProfile(state, payload) {
+      state.emptyProfile = payload
+    },
+    setFilmSelected(state, payload) {
+      state.filmSelected = payload
     },
     setFilmsNew(state, payload) {
       state.filmsNew = payload
@@ -32,6 +38,12 @@ export default new Vuex.Store({
     },
     setFilmsBestOverage(state, payload) {
       state.filmsBestOverage = payload
+    },
+    setDirectorSelected(state, payload) {
+      state.directorSelected = payload
+    },
+    setCastSelected(state, payload) {
+      state.castSelected = payload
     },
   },
 
@@ -102,6 +114,30 @@ export default new Vuex.Store({
           context.commit('setFilmsBestOverage', res.data.results)
 			})
     },
+
+    getCastDirector(context, payload) {
+      const filmCredits = {
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/movie/' + payload + '/credits',
+        headers: {
+         accept: 'application/json',
+         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM'
+        }
+      };
+      axios
+      .request(filmCredits)
+        .then(res => {
+          const cast = res.data.cast
+          const crew = res.data.crew
+          const director = crew
+            .filter(worker => worker.job === "Director")
+          context.commit('setDirectorSelected', director)
+          const actors = cast
+            .map(actor => actor.name)
+          context.commit('setCastSelected', actors)
+			})
+    },
+
     getConfigDetails() {
       const configDetails = {
         method: 'GET',

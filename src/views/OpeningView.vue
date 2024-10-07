@@ -192,7 +192,7 @@ export default {
 
 <style scoped>
 .opening-view {
-  background: #000;
+  background-color:rgb(22, 22, 22);
   color:White;
 }
 h1 {
@@ -207,7 +207,7 @@ p {
   background-size: 100%;
 }
 .shadow {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(22, 22, 22, 0.6);
   box-sizing: border-box;
   padding: 0px 460px 100px 460px;
 }
@@ -239,7 +239,7 @@ header {
   border-radius: 2px;
 }
 .language-select option {
-  color: black;
+  color: rgb(22, 22, 22);
 }
 .header-item-login .enter {
   box-sizing: border-box;

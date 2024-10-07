@@ -94,6 +94,10 @@ export default {
 </script>
 
 <style scoped>
+
+.top-page {
+  background-color: rgb(24, 24, 24);
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -103,6 +107,7 @@ header {
 }
 .enter button {
   background-color: transparent;
+  color: white;
   border: none;
   box-sizing: border-box;
   padding: 11px 18px;
@@ -129,6 +134,7 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
+  color :white;
 }
 h1 {
   text-align: left;
@@ -141,13 +147,13 @@ h1 {
 
 .login-email {
   padding: 15px 0px;
-  border: solid 1px rgb(0, 0, 0);
+  border: solid 1px rgb(255, 255, 255);
   border-radius: 5px;
   margin: 25px 0px 20px 0px;
 }
 .login-password {
   padding: 15px 0px;
-  border: solid 1px rgb(0, 0, 0);
+  border: solid 1px rgb(255, 255, 255);
   border-radius: 5px;
   margin-bottom: 20px;
 }

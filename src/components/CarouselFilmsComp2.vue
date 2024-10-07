@@ -1,12 +1,11 @@
 <template>
-  <div class="carouselComp">
+  <div class="carouselComp2">
     <h3>{{ titleCarousel }}</h3>
     
-    <v-sheet class="mx-auto">
-      <v-slide-group v-model="model" selected-class="bg-success" show-arrows>
-      <v-slide-group-item v-for="(film, id) in films" :key="id" >
-        <v-card v-if="film.backdrop_path && film.poster_path" class="selectedClass"
- >
+    
+     
+      <div v-for="(film, id) in films" :key="id" >
+        <div v-if="film.backdrop_path && film.poster_path" >
           <div >
             <img :src="'https://image.tmdb.org/t/p/w300' + film.backdrop_path" alt="filmImage" >
             <h6>{{ film.original_title }}</h6>
@@ -21,10 +20,9 @@
             <div><span>{{ film.genre_ids }}</span></div>
           </div>
           
-        </v-card>
-      </v-slide-group-item>
-      </v-slide-group>
-    </v-sheet>
+        </div>
+      </div>
+     
   </div>
 
   
@@ -34,7 +32,7 @@
 
 
 export default {
-  name: 'CarouselFilmsComp',
+  name: 'CarouselFilmsComp2',
   data() {
     return {
       imgMedium: false,
@@ -87,29 +85,15 @@ export default {
 </script>
 
 <style scoped>
-.carouselComp {
+.carouselComp2 {
   color: white;
   margin: 0px 15px 30px 15px;
 }
-.carouselComp > h3:first-of-type {
+.carouselComp2 > h3:first-of-type {
   text-align: left;
   padding-left: 60px;
 }
 
-.theme--light.v-sheet {
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.849)
-}
-
-
-.v-card {
-  max-width: 300px;
-  max-height: 600px;
-  margin-right: 10px;
-  background-color: rgba(19, 19, 19, 0.808) !important;
-  border-radius: 10px;
-  
-}
 
 .overview {
   width: 300px;
