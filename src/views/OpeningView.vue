@@ -42,7 +42,7 @@
           <p>Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, aparelhos de Bluray e outros dispositivos.</p>
         </div>
         <div class="content-image">
-          imagem
+          <img src="../../public/deadpool.jpg" alt="wolverine e deadpool">
         </div>
       </div>
       <div class="body-content-box">
@@ -51,7 +51,7 @@
           <p>Assista a quantos filmes e séries que quiser no celular, tablet, laptop e TV.</p>
         </div>
         <div class="content-image">
-          imagem
+          <img src="../../public/beeatlejuice.jpg" alt="os fantas se divertem">
         </div>
       </div>
       <div class="body-content-box">
@@ -60,7 +60,7 @@
           <p>Deixe as criaças se aventurarem com seus personagens favoritos em um espaço feito só para elas, sem pagar nada a mais por isso.</p>
         </div>
         <div class="content-image">
-          imagem
+          <img src="../../public/malvadoFavorito4.jpg" alt="malvados favoritos 4">
         </div>
       </div>
       <div class="body-content-box">
@@ -69,7 +69,7 @@
           <p>Assista em um avião, trem ou submarino...</p>
         </div>
         <div class="content-image">
-          imagem
+          <img src="../../public/aviao.jpg" alt="imagens de pessoas no avião">
         </div>
       </div>
       
@@ -167,13 +167,14 @@
       </div>
       <div class="network">
         <div class="social-media">
-          <div class="github"><img src="" alt="github"></div>
-          <div class="github-io"><img src="" alt="protifólio online"></div>
-          <div class="linkedin"><img src="" alt="linkedin"></div>
-          <div class="email"><img src="" alt="email"></div>
+          <div class="github"><a href="https://github.com/rafaelmanzutti/" target="_blank"><img src="../../public/github-invert.png" alt="github"/></a></div>
+          <div class="github-io"><a href="https://rafaelmanzutti.github.io/" target="_blank"><img src="../../public/portfolio2.png" alt="protifólio online"></a></div>
+          <div class="linkedin"><a href="//www.linkedin.com/in/rafaelmanzutti" target="_blank"><img src="../../public/LI-Logo.png" alt="linkedin"></a></div>
+          <div class="email"><img src="../../public/Gmail.png" alt="email">manzutti@gmail.com</div>
         </div>
         <div class="signature">
           <p>Clone Netflix - Rafael Manzutti</p>
+          <p>"This product uses the TMDB API but is not endorsed or certified by TMDB."</p>
         </div>
       </div>
     </footer>
@@ -355,10 +356,51 @@ footer {
   justify-content: space-around;
   box-sizing: border-box;
   padding: 10px 0px 20px 0px;
+  height: 100px;
+  margin-bottom: 20px;
 }
+
+.github {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.github img {
+  width: auto;
+  height: 120%;
+}
+.github-io {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+.github-io img {
+  width: auto;
+  height: 100%;
+}
+.linkedin {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+.linkedin img {
+  width: 100%;
+  height: auto;
+}
+.email {
+  width: 200px;
+}
+.email img {
+  width: auto;
+  height: 100%;
+}
+
 .signature p {
 text-align: left;
 font-size: 0.9rem;
+margin: 0;
 }
 
 @media (max-width: 1920px){

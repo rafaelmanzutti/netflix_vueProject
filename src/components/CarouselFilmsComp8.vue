@@ -7,14 +7,14 @@
         <button class="close-info" @click="closeInfo">X</button>
       </div>
       <div class="info-poster">
+        <div><span>{{ filmSelected.original_title }}</span></div>
         <div >
-          <span>{{ filmSelected.original_title }}</span>
-          <span>{{ filmSelected.release_date }}</span>
+          <div><span>{{ filmSelected.release_date }}</span></div>
+          <div><span>director: {{ directorSelected }}</span></div>
         </div>
+        <div><span>genres: {{ filmSelected.genre_ids }}</span></div>
         <div class="overview"><p>{{ filmSelected.overview }}</p></div>
-        <div><span>{{ filmSelected.genre_ids }}</span></div>
-        <div><span>{{ directorSelected }}</span></div>
-        <div><span>{{ castSelected }}</span></div>
+        <div><span>cast: {{ castSelected }}</span></div>
       </div>
     </div>
 
@@ -23,30 +23,32 @@
     </div>
     
     <div class="container">
-      <button class="handle left-handle" @click="onHandleClickLeft()">
+      <button class="handle left-handle" @click="onHandleClickLeft(session)">
         <div class="text">&#8249;</div>
       </button>
-      <div class="slider">
+      <div :id="session" class="slider">
         <div class="sli">
           <div  v-for="(film, id) in films" :key="id" class="sli2">
             <div v-if="film.backdrop_path && film.poster_path" class="sli3">
-              <div >
+              <div>
                 <div class="div-image">
                   <img :src="'https://image.tmdb.org/t/p/w500' + film.backdrop_path" alt="filmImage300px" >
                 </div>
-                
                 <h6>{{ film.original_title }}</h6>
-                <h6>{{ film.release_date }}</h6>
-                <button class="open-info" @click="openInfo(film)">Info</button>
-                <div class="overview"><p>{{ film.overview }}</p></div>
-                <div><span>{{ film.genre_ids }}</span></div>
+                <div class="date-button-info">
+                  <h6>{{ film.release_date }}</h6>
+                  <button class="open-info" @click="openInfo(film)">Info</button>
+                </div>
+                <div class="genres-overview">
+                  <div><p class="genres">genres: {{ film.genre_ids }}</p></div>
+                  <div><p>"{{ film.overview }}"</p></div>
+                </div>
               </div>
-          
             </div>
           </div>
         </div>
       </div>
-      <button class="handle right-handle" @click="onHandleClickRight()">
+      <button class="handle right-handle" @click="onHandleClickRight(session)">
         <div class="text">&#8250;</div>
       </button>
     </div>
@@ -92,10 +94,17 @@ export default {
       return this.$store.state.filmSelected
     },
     directorSelected() {
-      return this.$store.state.directorSelected
+
+      return this.$store.state.directorSelected[0].name
     },
     castSelected() {
-      return this.$store.state.castSelected
+      //let castName = ""
+      const castSelectedArray = this.$store.state.castSelected.flat()
+      //castSelectedArray.forEach(actors => {
+      //  castName += actors +", "
+     // });
+      //return castName
+      return castSelectedArray
     },
 
   },
@@ -117,14 +126,14 @@ export default {
       this.getCastDirector(film.id)
     },
 
-    onHandleClickLeft(){
-      const slider = document.querySelector(".slider")
+    onHandleClickLeft(elementId){
+      const slider = document.getElementById(elementId)
       const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index"))
       slider.style.setProperty("--slider-index", sliderIndex - 1)  
     },
 
-    onHandleClickRight() {
-      const slider = document.querySelector(".slider")
+    onHandleClickRight(elementId) {
+      const slider = document.getElementById(elementId)
       const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue("--slider-index"))
       slider.style.setProperty("--slider-index", sliderIndex + 1)
     },
@@ -217,20 +226,18 @@ span {
   justify-content: space-between;
 }
 
-
 .title {
   margin: 15px 50px 0 50px;
   color: white;
 }
 
 .open-info {
-  background-color: blue;
-  border-radius: 25%;
+  background-color: rgb(0, 0, 199);
+  width: 50px;
+  border-radius: 25px;
   border: solid 2px #ffffff;
   color: white;
 }
-
-
 
 .container {
   margin: 10px 0px;
@@ -250,12 +257,10 @@ span {
   transform: translateX(calc(var(--slider-index) * -100%));
   transition: transform 250ms ease-in-out;
 }
-
 .sli {
   display: flex;
   max-width: 90vw;
 }
-
 .slider img {
   aspect-ratio: 16 / 9;
   padding: .25rem;
@@ -270,7 +275,7 @@ span {
   width: 500px;
   background-color: rgb(17, 17, 17);
   border-radius: 1rem;
-  box-shadow: 1px 3px 5px 3px rgba(151, 151, 151, 0.781);
+  box-shadow: 1px 3px 5px 3px rgba(112, 112, 112, 0.781);
 }
 .sli3 {
   max-width: 500px;
@@ -283,6 +288,19 @@ span {
 }
 .div-image img {
   width: 100%;
+}
+.date-button-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px 10px 30px;
+}
+.genres-overview {
+  padding: 0px 30px 10px 20px;
+}
+.genres {
+  padding: 0 0 10px 10px;
+  text-align: start;
 }
 
 .handle {

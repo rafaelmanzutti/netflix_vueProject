@@ -27,6 +27,8 @@
         </div>
         
         <CarouselFilmsComp8 titleCarousel="Filmes Populares" session="filmsPop" />
+        <CarouselFilmsComp8 titleCarousel="Filmes Melhores Avaliados" session="filmsBestOverage" />
+        <CarouselFilmsComp8 titleCarousel="Filmes Novidades" session="filmsNew" />
       </div>
     </div>
     

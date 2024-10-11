@@ -73,13 +73,14 @@
       </div>
       <div class="network">
         <div class="social-media">
-          <div class="github"><img src="" alt="github"></div>
-          <div class="github-io"><img src="" alt="protifólio online"></div>
-          <div class="linkedin"><img src="" alt="linkedin"></div>
-          <div class="email"><img src="" alt="email"></div>
+          <div class="github"><a href="https://github.com/rafaelmanzutti/" target="_blank"><img src="../../public/github-invert.png" alt="github"/></a></div>
+          <div class="github-io"><a href="https://rafaelmanzutti.github.io/" target="_blank"><img src="../../public/portfolio2.png" alt="protifólio online"></a></div>
+          <div class="linkedin"><a href="//www.linkedin.com/in/rafaelmanzutti" target="_blank"><img src="../../public/LI-Logo.png" alt="linkedin"></a></div>
+          <div class="email"><img src="../../public/Gmail.png" alt="email">manzutti@gmail.com</div>
         </div>
         <div class="signature">
           <p>Clone Netflix - Rafael Manzutti</p>
+          <p>"This product uses the TMDB API but is not endorsed or certified by TMDB."</p>
         </div>
       </div>
     </footer>
@@ -104,8 +105,17 @@ export default {
     ...mapMutations(['setLog']),
 
     entrarBrowse() {
-      this.setLog(true)
-      this.$router.push('browse')
+      if (this.email === "manzutti@gmail.com" && this.senha === "123456") {
+        this.email= ''
+        this.senha= ''
+        this.setLog(true)
+        this.$router.push('browse')
+      } else {
+        this.email= ''
+        this.senha= ''
+        alert("email e senha não conferem");
+      }
+      
     }
   }
 }
@@ -116,6 +126,9 @@ export default {
 .login-view {
   background-color: rgb(22, 22, 22);
   color:White;
+}
+input {
+  color: white;
 }
 h1 {
   font-size: 2rem;
@@ -237,10 +250,51 @@ footer {
   justify-content: space-around;
   box-sizing: border-box;
   padding: 10px 0px 20px 0px;
+  height: 100px;
+  margin-bottom: 20px;
 }
+
+.github {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.github img {
+  width: auto;
+  height: 120%;
+}
+.github-io {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+.github-io img {
+  width: auto;
+  height: 100%;
+}
+.linkedin {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+.linkedin img {
+  width: 100%;
+  height: auto;
+}
+.email {
+  width: 200px;
+}
+.email img {
+  width: auto;
+  height: 100%;
+}
+
 .signature p {
 text-align: left;
 font-size: 0.9rem;
+margin: 0;
 }
 
 @media (max-width: 1920px){
