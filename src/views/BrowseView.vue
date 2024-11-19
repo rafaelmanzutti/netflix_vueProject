@@ -20,15 +20,15 @@
             </div>
           </div>
           <div class="header-info">
-            <div class="profile-name">{{ profile.name }}</div>
-            <img :src="profile.img" alt="avatar" :style="{'width': '30px'}">
+            <div class="profile-name">{{ profileLocal.name }}</div>
+            <img :src="profileLocal.img" alt="avatar" :style="{'width': '30px'}">
             <button @click="cleanLog()">Sair</button>
           </div>
         </div>
         
-        <CarouselFilmsComp8 titleCarousel="Filmes Populares" session="filmsPop" />
-        <CarouselFilmsComp8 titleCarousel="Filmes Melhores Avaliados" session="filmsBestOverage" />
-        <CarouselFilmsComp8 titleCarousel="Filmes Novidades" session="filmsNew" />
+        <CarouselFilmsComp2 titleCarousel="Filmes Populares" session="filmsPop" />
+        <CarouselFilmsComp2 titleCarousel="Filmes Melhores Avaliados" session="filmsBestOverage" />
+        <CarouselFilmsComp2 titleCarousel="Filmes Mais Votados" session="filmsMostVote" />
       </div>
     </div>
     
@@ -37,13 +37,14 @@
 
 <script>
 import ProfilesComp from '@/components/ProfilesComp.vue'
-import CarouselFilmsComp8 from '@/components/CarouselFilmsComp8.vue'
+import CarouselFilmsComp2 from '@/components/CarouselFilmsComp2.vue'
 import axios from 'axios'
 import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
-  name: 'BrowseView',
-  components: {ProfilesComp, CarouselFilmsComp8},
+  
+  components: {ProfilesComp, CarouselFilmsComp2},
   data() {
     return {
       profiles: [],
@@ -55,10 +56,16 @@ export default {
     },
     emptyProfile() {
       return this.$store.state.emptyProfile
+    },
+    profileLocal() {
+      const profile = JSON.parse(localStorage.getItem('profile')) || []
+      return profile
     }
+    
   },
   methods: {
     ...mapMutations(['setLog', 'setEmptyProfile']),
+    ...mapActions([ 'getGenresList']),
 
     obterPerfis() {
 			axios.get('http://localhost:3000/profiles')
@@ -68,12 +75,15 @@ export default {
 		},
     cleanLog() {
       this.setLog(false)
+      localStorage.setItem('logLocal', "false")
       this.setEmptyProfile(true)
+      localStorage.removeItem('profile')
       this.$router.push('/')
     },
   },
   created() {
     this.obterPerfis()
+    this.getGenresList()
   }
 }
 </script>

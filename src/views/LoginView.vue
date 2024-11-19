@@ -85,7 +85,6 @@
       </div>
     </footer>
 
-
   </div>
 </template>
 
@@ -98,26 +97,30 @@ export default {
     return {
       senha: '',
       email: '',
-      users: {}
+      users: {},
+      
     }
   },
+  
   methods: {
     ...mapMutations(['setLog']),
 
     entrarBrowse() {
-      if (this.email === "manzutti@gmail.com" && this.senha === "123456") {
+      if (this.email === "netflixclone@gmail.com" && this.senha === "123456") {
         this.email= ''
         this.senha= ''
         this.setLog(true)
         this.$router.push('browse')
+        localStorage.setItem('logLocal', "true")
       } else {
         this.email= ''
         this.senha= ''
         alert("email e senha não conferem");
       }
-      
     }
-  }
+    
+  },
+ 
 }
 </script>
 

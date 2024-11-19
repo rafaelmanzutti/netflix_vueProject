@@ -5,24 +5,27 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 
 export default {
 
-  data() {
-    return {
-      log: false
-    }
-  },
   methods: {
-    verifyLog() {
-      if(this.log === true) {
-        this.$router.push('browse')
-      }
-    }
+    ...mapMutations(['setLog', 'setEmptyProfile']),
 
   },
-  mounted(){
-    this.verifyLog()
+
+  mounted() {
+    const json = localStorage.getItem('logLocal')
+    const profileLocal = JSON.parse(localStorage.getItem('profile')) || []
+    if(json == "true" && Object.keys(profileLocal).length > 0) {
+      this.setLog(true)
+      this.setEmptyProfile(false)
+      this.$router.push('browse')
+    }
+    if(json == "true" && Object.keys(profileLocal).length === 0) {
+      this.setLog(true)
+      this.$router.push('browse')
+    }
   }
 }
 

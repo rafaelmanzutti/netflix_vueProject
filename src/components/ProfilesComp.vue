@@ -30,6 +30,8 @@ export default {
     setProfileSelected(profile) {
       this.setProfile(profile)
       this.setEmptyProfile(false)
+      const profileLocal = profile
+      localStorage.setItem("profile", JSON.stringify(profileLocal))
     }
   }
 }

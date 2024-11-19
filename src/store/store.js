@@ -10,46 +10,50 @@ export default new Vuex.Store({
     log: false,
     emptyProfile: true,
     filmSelected: {},
-    filmsNew: {},
+    filmsMostVote: {},
     filmsPop: {},
     filmsBestOverage: {},
     directorSelected: [],
     castSelected: [],
+    genresList: []
   },
 
   mutations: {
-    setLog(state, payload) {
-      state.log = payload
+    setLog(state, trueOrFalse) {
+      state.log = trueOrFalse
     },
-    setProfile(state, payload) {
-      state.profile = payload
+    setProfile(state, profile) {
+      state.profile = profile
     },
-    setEmptyProfile(state, payload) {
-      state.emptyProfile = payload
+    setEmptyProfile(state, trueOrFalse) {
+      state.emptyProfile = trueOrFalse
     },
-    setFilmSelected(state, payload) {
-      state.filmSelected = payload
+    setGenresList(state, genresList) {
+      state.genresList = genresList
     },
-    setFilmsNew(state, payload) {
-      state.filmsNew = payload
+    setFilmSelected(state, film) {
+      state.filmSelected = film
     },
-    setFilmsPop(state, payload) {
-      state.filmsPop = payload
+    setFilmsMostVote(state, filmsVote) {
+      state.filmsMostVote = filmsVote
     },
-    setFilmsBestOverage(state, payload) {
-      state.filmsBestOverage = payload
+    setFilmsPop(state, filmsPop) {
+      state.filmsPop = filmsPop
     },
-    setDirectorSelected(state, payload) {
-      state.directorSelected = payload
+    setFilmsBestOverage(state, filmsOverage) {
+      state.filmsBestOverage = filmsOverage
     },
-    setCastSelected(state, payload) {
-      state.castSelected = payload
+    setDirectorSelected(state, directorSelected) {
+      state.directorSelected = directorSelected
+    },
+    setCastSelected(state, castSelected) {
+      state.castSelected = castSelected
     },
   },
 
   actions: {
-    getFilmsNew(context) {
-      const filmsNew = {
+    getFilmsMostVote(context) {
+      const filmsMostVote = {
         method: 'GET',
         url: 'https://api.themoviedb.org/3/discover/movie',
         params: {
@@ -57,17 +61,17 @@ export default new Vuex.Store({
           include_video: 'true',
           language: 'en-US',
           page: '1',
-          sort_by: 'primary_release_date.desc'
-       },
-       headers: {
-         accept: 'application/json',
-         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM'
+          sort_by: 'vote_count.desc'
+        },
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTczMDQ2NjczOS4wMjA1OTQsInN1YiI6IjY2NDI2Y2I1YmViODljMDg5YTkyZGQzMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WbnVt8e9BBh8llwJmNCU-wyPtZKukppGcZPqV7MKoJ8'
         }
       };
       axios
-      .request(filmsNew)
+      .request(filmsMostVote)
         .then(res => {
-          context.commit('setFilmsNew', res.data.results)
+          context.commit('setFilmsMostVote', res.data.results)
 			})
     },
     getFilmsPop(context) {
@@ -110,15 +114,15 @@ export default new Vuex.Store({
       };
       axios
       .request(filmsBestOverage)
-        .then(res => {
-          context.commit('setFilmsBestOverage', res.data.results)
+      .then(res => {
+        context.commit('setFilmsBestOverage', res.data.results)
 			})
     },
 
-    getCastDirector(context, payload) {
+    getCastDirector(context, filmId) {
       const filmCredits = {
         method: 'GET',
-        url: 'https://api.themoviedb.org/3/movie/' + payload + '/credits',
+        url: 'https://api.themoviedb.org/3/movie/' + filmId + '/credits',
         headers: {
          accept: 'application/json',
          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM'
@@ -126,39 +130,38 @@ export default new Vuex.Store({
       };
       axios
       .request(filmCredits)
-        .then(res => {
-          const cast = res.data.cast
-          const crew = res.data.crew
-          const director = crew
-            .filter(worker => worker.job === "Director")
-          context.commit('setDirectorSelected', director)
-          const actors = cast
-            .map(actor => actor.name)
-          context.commit('setCastSelected', actors)
+      .then(res => {
+        const cast = res.data.cast
+        const crew = res.data.crew
+
+        const director = crew
+          .filter(worker => worker.job === "Director")
+        context.commit('setDirectorSelected', director)
+       
+        const actors = cast
+          .map(actor => actor.name)
+        context.commit('setCastSelected', actors)
 			})
     },
 
-    getConfigDetails() {
-      const configDetails = {
+    getGenresList(context) {
+      const GetGenresList = {
         method: 'GET',
-        url: 'https://api.themoviedb.org/3/configuration',
+        url: 'https://api.themoviedb.org/3/genre/movie/list',
+        params: {language: 'en'},
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNTMwMDA4NS40ODMxNDksInN1YiI6IjY2NDI2Y2I1YmViODljMDg5YTkyZGQzMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Td3_YY5KqSlKFnE-H5zgTg2WX_2FGiGrOwX2JsKu-UY'
-       }
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTczMDMwMjAwOS41MjI3OTAyLCJzdWIiOiI2NjQyNmNiNWJlYjg5YzA4OWE5MmRkMzMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.builD5sdUN_NMXKnFJoCdJLdY5tnsHRNOVvSEutnbyw'
+        }
       };
-      axios
-        .request(configDetails)
-        .then(function (response) {
-         console.log(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    },
 
-    
+      axios
+        .request(GetGenresList)
+        .then(res => {
+          let genres = res.data
+          context.commit('setGenresList', genres.genres)
+        })
+    }
 
   }
-
 })
