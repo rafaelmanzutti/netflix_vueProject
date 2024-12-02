@@ -148,6 +148,7 @@ export default {
       this.clickInfo = true
       this.setFilmSelected(film)
       this.getCastDirector(film.id)
+      console.log(process.env.VUE_APP_dbPass)
     },
 
     onHandleClickLeft(elementId){
@@ -319,7 +320,7 @@ span {
 
 .sli2 {
   display: flex;
-  align-items: center;
+  align-items:flex-start;
   justify-content: center;
   width: auto
 }
@@ -362,9 +363,9 @@ span {
   flex-grow: 0;
   background-color: rgba(126, 126, 126, 0.5);
   z-index: 3;
-  height: 10.5rem;
+  height: 10rem;
   width: 5rem;
-  margin: .25rem 0;
+  margin: 0.25rem 0;
   padding: 0 .5rem;
   cursor: pointer;
   color: white;

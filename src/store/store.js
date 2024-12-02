@@ -65,7 +65,7 @@ export default new Vuex.Store({
         },
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTczMDQ2NjczOS4wMjA1OTQsInN1YiI6IjY2NDI2Y2I1YmViODljMDg5YTkyZGQzMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WbnVt8e9BBh8llwJmNCU-wyPtZKukppGcZPqV7MKoJ8'
+          Authorization: `${process.env.VUE_APP_API_KEY}eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTczMDQ2NjczOS4wMjA1OTQsInN1YiI6IjY2NDI2Y2I1YmViODljMDg5YTkyZGQzMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WbnVt8e9BBh8llwJmNCU-wyPtZKukppGcZPqV7MKoJ8`
         }
       };
       axios
@@ -87,7 +87,7 @@ export default new Vuex.Store({
        },
        headers: {
          accept: 'application/json',
-         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM'
+         Authorization: `${process.env.VUE_APP_API_KEY}eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM`
         }
       };
       axios
@@ -109,7 +109,7 @@ export default new Vuex.Store({
        },
        headers: {
          accept: 'application/json',
-         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM'
+         Authorization: `${process.env.VUE_APP_API_KEY}eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM`
         }
       };
       axios
@@ -125,7 +125,7 @@ export default new Vuex.Store({
         url: 'https://api.themoviedb.org/3/movie/' + filmId + '/credits',
         headers: {
          accept: 'application/json',
-         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM'
+         Authorization: `${process.env.VUE_APP_API_KEY}eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTcyNDkzMTU2OS41MzU3Miwic3ViIjoiNjY0MjZjYjViZWI4OWMwODlhOTJkZDMzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.9kg_FN8d71qIhoZs0kBb5D5PzBGzGFsT3O5Jp-Se3MM`
         }
       };
       axios
@@ -151,7 +151,7 @@ export default new Vuex.Store({
         params: {language: 'en'},
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTczMDMwMjAwOS41MjI3OTAyLCJzdWIiOiI2NjQyNmNiNWJlYjg5YzA4OWE5MmRkMzMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.builD5sdUN_NMXKnFJoCdJLdY5tnsHRNOVvSEutnbyw'
+          Authorization: `${process.env.VUE_APP_API_KEY}eyJhdWQiOiIwMjAzY2Y1NjdlZmJjMzJhNzA0N2I1ZTRhYjUxNWFkZCIsIm5iZiI6MTczMDMwMjAwOS41MjI3OTAyLCJzdWIiOiI2NjQyNmNiNWJlYjg5YzA4OWE5MmRkMzMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.builD5sdUN_NMXKnFJoCdJLdY5tnsHRNOVvSEutnbyw`
         }
       };
 
