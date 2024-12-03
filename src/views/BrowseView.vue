@@ -29,6 +29,7 @@
         <CarouselFilmsComp2 titleCarousel="Filmes Populares" session="filmsPop" />
         <CarouselFilmsComp2 titleCarousel="Filmes Melhores Avaliados" session="filmsBestOverage" />
         <CarouselFilmsComp2 titleCarousel="Filmes Mais Votados" session="filmsMostVote" />
+        <div class="black-base"></div>
       </div>
     </div>
     
@@ -153,6 +154,11 @@ h1, p {
 .profile-name {
   justify-content: center;
   align-items: center;
+}
+.black-base {
+  width: auto;
+  height: 300px;
+  background-color: rgb(22, 22, 22);
 }
 
 
