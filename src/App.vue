@@ -36,6 +36,8 @@ body, html {
   max-width: 100%;
   max-height: 100%;
   margin: 0;
+  padding-bottom: 30px;
+  background-color: rgb(22, 22, 22);
 }
 
 #app {

@@ -27,7 +27,6 @@
         <div class="text">&#8249;</div>
       </button>
       <div :id="session" class="slider">
-        
           <div  v-for="(film, id) in films" :key="id" class="sli2">
             <div v-if="film.backdrop_path && film.poster_path" class="sli3">
               <div>
@@ -45,7 +44,6 @@
               </div>
             </div>
           </div>
-        
       </div>
       <button class="handle right-handle" @click="onHandleClickRight(session)">
         <div class="text">&#8250;</div>
@@ -302,7 +300,7 @@ span {
 
 .slider {
   display: flex;
-  max-width: 90vw;
+  width: 90%;
   --slider-index: 0;
   flex-grow: 1;
   margin: 0 .3rem;
@@ -318,6 +316,7 @@ span {
 }
 
 .sli2 {
+  padding-top: 5px;
   display: flex;
   align-items:flex-start;
   justify-content: center;
@@ -332,7 +331,8 @@ span {
 }
 .sli3:hover {
   width: 500px;
-  height: 95%;
+  height: 98%;
+  align-items: center;
   background-color: rgb(17, 17, 17);
   border-radius: 1rem;
   box-shadow: 1px 3px 5px 3px rgba(112, 112, 112, 0.781);
@@ -364,7 +364,7 @@ span {
   z-index: 3;
   height: 10rem;
   width: 5rem;
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
   padding: 0 .5rem;
   cursor: pointer;
   color: white;

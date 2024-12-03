@@ -89,7 +89,6 @@ export default {
 </script>
 
 <style>
-
 h1, p {
   color: white;
 }
