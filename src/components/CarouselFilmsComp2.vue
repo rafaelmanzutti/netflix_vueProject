@@ -116,7 +116,7 @@ export default {
     },
 
     directorSelected() {
-      return this.$store.state.directorSelected
+      return this.$store.state.directorSelected[0]
     },
     
     castSelected() {
@@ -148,7 +148,6 @@ export default {
       this.clickInfo = true
       this.setFilmSelected(film)
       this.getCastDirector(film.id)
-      console.log(process.env.VUE_APP_dbPass)
     },
 
     onHandleClickLeft(elementId){
