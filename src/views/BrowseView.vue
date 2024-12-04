@@ -26,10 +26,10 @@
           </div>
         </div>
         
-        <CarouselFilmsComp2 titleCarousel="Filmes Populares" session="filmsPop" />
-        <CarouselFilmsComp2 titleCarousel="Filmes Melhores Avaliados" session="filmsBestOverage" />
-        <CarouselFilmsComp2 titleCarousel="Filmes Mais Votados" session="filmsMostVote" />
-        <div class="black-base"></div>
+        <CarouselFilmsComp titleCarousel="Filmes Populares" session="filmsPop" />
+        <CarouselFilmsComp titleCarousel="Filmes Melhores Avaliados" session="filmsBestOverage" />
+        <CarouselFilmsComp titleCarousel="Filmes Mais Votados" session="filmsMostVote" />
+        <div class="black-space"></div>
       </div>
     </div>
     
@@ -38,14 +38,14 @@
 
 <script>
 import ProfilesComp from '@/components/ProfilesComp.vue'
-import CarouselFilmsComp2 from '@/components/CarouselFilmsComp2.vue'
+import CarouselFilmsComp from '@/components/CarouselFilmsComp.vue'
 import axios from 'axios'
 import { mapMutations } from 'vuex'
 import { mapActions } from 'vuex'
 
 export default {
   
-  components: {ProfilesComp, CarouselFilmsComp2},
+  components: {ProfilesComp, CarouselFilmsComp},
   data() {
     return {
       profiles: [],
@@ -155,11 +155,8 @@ h1, p {
   justify-content: center;
   align-items: center;
 }
-.black-base {
-  width: auto;
+.black-space {
   height: 300px;
-  background-color: rgb(22, 22, 22);
 }
-
 
 </style>
