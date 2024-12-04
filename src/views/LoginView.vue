@@ -89,7 +89,6 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
 
 export default {
   name: 'LoginView',
@@ -98,18 +97,15 @@ export default {
       senha: '',
       email: '',
       users: {},
-      
     }
   },
   
   methods: {
-    ...mapMutations(['setLog']),
 
     entrarBrowse() {
       if (this.email === "netflixclone@gmail.com" && this.senha === "123456") {
         this.email= ''
         this.senha= ''
-        this.setLog(true)
         this.$router.push('browse')
         localStorage.setItem('logLocal', "true")
       } else {
@@ -118,7 +114,7 @@ export default {
         alert("email e senha não conferem");
       }
     }
-    
+
   },
  
 }

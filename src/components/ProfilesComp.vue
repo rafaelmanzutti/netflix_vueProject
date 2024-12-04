@@ -25,10 +25,9 @@ export default {
     profiles: Array
   },
   methods: {
-    ...mapMutations(['setProfile', 'setEmptyProfile']),
+    ...mapMutations(['setEmptyProfile']),
 
     setProfileSelected(profile) {
-      this.setProfile(profile)
       this.setEmptyProfile(false)
       const profileLocal = profile
       localStorage.setItem("profile", JSON.stringify(profileLocal))

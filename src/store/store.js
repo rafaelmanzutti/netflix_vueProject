@@ -6,8 +6,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    profile: {},
-    log: false,
     emptyProfile: true,
     filmSelected: {},
     filmsMostVote: {},
@@ -19,12 +17,6 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    setLog(state, trueOrFalse) {
-      state.log = trueOrFalse
-    },
-    setProfile(state, profile) {
-      state.profile = profile
-    },
     setEmptyProfile(state, trueOrFalse) {
       state.emptyProfile = trueOrFalse
     },

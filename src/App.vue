@@ -10,20 +10,18 @@ import { mapMutations } from 'vuex'
 export default {
 
   methods: {
-    ...mapMutations(['setLog', 'setEmptyProfile']),
+    ...mapMutations(['setEmptyProfile']),
 
   },
 
   mounted() {
-    const json = localStorage.getItem('logLocal')
+    const log = localStorage.getItem('logLocal')
     const profileLocal = JSON.parse(localStorage.getItem('profile')) || []
-    if(json == "true" && Object.keys(profileLocal).length > 0) {
-      this.setLog(true)
+    if(log == "true" && Object.keys(profileLocal).length > 0) {
       this.setEmptyProfile(false)
       this.$router.push('browse')
     }
-    if(json == "true" && Object.keys(profileLocal).length === 0) {
-      this.setLog(true)
+    if(log == "true" && Object.keys(profileLocal).length === 0) {
       this.$router.push('browse')
     }
   }

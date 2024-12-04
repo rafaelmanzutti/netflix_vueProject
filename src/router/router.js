@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from '@/store/store'
+//import store from '@/store/store'
 import OpeningView from '../views/OpeningView.vue'
 import BrowseView from '../views/BrowseView.vue'
 import LoginView from '../views/LoginView.vue'
@@ -19,9 +19,9 @@ const routes = [
     name: 'browse',
     component: BrowseView,
     beforeEnter: (to, from, next) => {
-      const autenticado = store.state.log
+      const autenticado = localStorage.getItem('logLocal')
       autenticado ? next() : next(false)
-  }
+    }
   }, {
     path: '/login',
     name: 'login',

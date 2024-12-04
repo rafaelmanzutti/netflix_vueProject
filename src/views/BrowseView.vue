@@ -52,9 +52,6 @@ export default {
     }
   },
   computed: {
-    profile() {
-      return this.$store.state.profile
-    },
     emptyProfile() {
       return this.$store.state.emptyProfile
     },
@@ -65,17 +62,16 @@ export default {
     
   },
   methods: {
-    ...mapMutations(['setLog', 'setEmptyProfile']),
+    ...mapMutations(['setEmptyProfile']),
     ...mapActions([ 'getGenresList']),
 
-    obterPerfis() {
+    getProfiles() {
 			axios.get('http://localhost:3000/profiles')
         .then(res => {
           this.profiles = (res.data)
 			})
 		},
     cleanLog() {
-      this.setLog(false)
       localStorage.setItem('logLocal', "false")
       this.setEmptyProfile(true)
       localStorage.removeItem('profile')
@@ -83,7 +79,7 @@ export default {
     },
   },
   created() {
-    this.obterPerfis()
+    this.getProfiles()
     this.getGenresList()
   }
 }
