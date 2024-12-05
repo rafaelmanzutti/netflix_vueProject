@@ -2,7 +2,7 @@
   <div class="browse-view">
 
     <div >
-      <ProfilesComp :profiles="[...profiles]" v-if="emptyProfile"/>
+      <ProfilesComp :restartProfile="markProfile" :profiles="[...profiles]" v-if="emptyProfile"/>
       <div v-else>
         <div class="header-browse">
           <div class="header-logos">
@@ -40,7 +40,6 @@
 import ProfilesComp from '@/components/ProfilesComp.vue'
 import CarouselFilmsComp from '@/components/CarouselFilmsComp.vue'
 import axios from 'axios'
-import { mapMutations } from 'vuex'
 import { mapActions } from 'vuex'
 
 export default {
@@ -49,20 +48,18 @@ export default {
   data() {
     return {
       profiles: [],
+      emptyProfile: ""
     }
   },
   computed: {
-    emptyProfile() {
-      return this.$store.state.emptyProfile
-    },
     profileLocal() {
       const profile = JSON.parse(localStorage.getItem('profile')) || []
       return profile
-    }
+    },
+    
     
   },
   methods: {
-    ...mapMutations(['setEmptyProfile']),
     ...mapActions([ 'getGenresList']),
 
     getProfiles() {
@@ -71,16 +68,26 @@ export default {
           this.profiles = (res.data)
 			})
 		},
+    markProfile() {
+      const profileLocal = JSON.parse(localStorage.getItem('profile')) || []
+      if(Object.keys(profileLocal).length > 0) {
+        this.emptyProfile = false
+      } else {
+        this.emptyProfile = true
+      }
+    },
     cleanLog() {
       localStorage.setItem('logLocal', "false")
-      this.setEmptyProfile(true)
       localStorage.removeItem('profile')
       this.$router.push('/')
     },
+    
   },
+
   created() {
     this.getProfiles()
     this.getGenresList()
+    this.markProfile()
   }
 }
 </script>

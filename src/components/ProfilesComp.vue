@@ -18,19 +18,17 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
 export default {
   name: 'ProfilesComp',
   props: {
-    profiles: Array
+    profiles: Array,
+    restartProfile: Function
   },
   methods: {
-    ...mapMutations(['setEmptyProfile']),
-
     setProfileSelected(profile) {
-      this.setEmptyProfile(false)
       const profileLocal = profile
       localStorage.setItem("profile", JSON.stringify(profileLocal))
+      this.restartProfile()
     }
   }
 }

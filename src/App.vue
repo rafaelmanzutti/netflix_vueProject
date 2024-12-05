@@ -5,23 +5,11 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
-
 export default {
-
-  methods: {
-    ...mapMutations(['setEmptyProfile']),
-
-  },
 
   mounted() {
     const log = localStorage.getItem('logLocal')
-    const profileLocal = JSON.parse(localStorage.getItem('profile')) || []
-    if(log == "true" && Object.keys(profileLocal).length > 0) {
-      this.setEmptyProfile(false)
-      this.$router.push('browse')
-    }
-    if(log == "true" && Object.keys(profileLocal).length === 0) {
+    if(log == "true") {
       this.$router.push('browse')
     }
   }
