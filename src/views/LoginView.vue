@@ -106,8 +106,8 @@ export default {
       if (this.email === "netflixclone@gmail.com" && this.senha === "123456") {
         this.email= ''
         this.senha= ''
-        this.$router.push('browse')
         localStorage.setItem('logLocal', "true")
+        this.$router.push('browse')
       } else {
         this.email= ''
         this.senha= ''

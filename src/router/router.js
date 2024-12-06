@@ -13,14 +13,27 @@ const routes = [
   {
     path: '/',
     name: 'opening',
-    component: OpeningView
+    component: OpeningView,
+    beforeEnter: (to, from, next) => {
+      const autenticated = localStorage.getItem('logLocal')
+      if(autenticated == 'true'){
+        next('/browse')
+      } else {
+        next()
+      }
+    }
   }, {
     path: '/browse',
     name: 'browse',
     component: BrowseView,
     beforeEnter: (to, from, next) => {
-      const autenticado = localStorage.getItem('logLocal')
-      autenticado ? next() : next(false)
+      const autenticated = localStorage.getItem('logLocal')
+      if(autenticated == 'true'){
+        next()
+      } else {
+        next(false)
+      }
+      
     }
   }, {
     path: '/login',
@@ -35,9 +48,21 @@ const routes = [
     redirect: '/'
   }]
 
+
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes,
 })
+
+/*router.beforeEach((to, from, next) => {
+  
+  if(autenticated || to.path !== '/browse'){
+    console.log(autenticated)
+    next({path: '/browse'})
+  } else {
+    console.log(autenticated)
+    next()
+  }
+})*/
 
 export default router
