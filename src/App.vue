@@ -7,12 +7,6 @@
 <script>
 export default {
 
-  /*mounted() {
-    const log = localStorage.getItem('logLocal')
-    if(log == "true") {
-      this.$router.push('browse')
-    }
-  }*/
 }
 
 </script>

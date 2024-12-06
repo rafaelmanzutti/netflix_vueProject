@@ -6,7 +6,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    emptyProfile: true,
     filmSelected: {},
     filmsMostVote: {},
     filmsPop: {},
@@ -17,9 +16,6 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    setEmptyProfile(state, trueOrFalse) {
-      state.emptyProfile = trueOrFalse
-    },
     setGenresList(state, genresList) {
       state.genresList = genresList
     },
